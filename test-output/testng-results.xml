@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="128638" started-at="2019-03-19T09:48:28Z" finished-at="2019-03-19T09:50:37Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="128638" started-at="2019-03-19T09:48:28Z" finished-at="2019-03-19T09:50:37Z">
+      <class name="HomePage.InvisibleElementSelect">
+        <test-method status="PASS" signature="launchTheApp()" name="launchTheApp" is-config="true" duration-ms="39485" started-at="2019-03-19T09:48:28Z" finished-at="2019-03-19T09:49:08Z">
+        </test-method>
+        <test-method status="PASS" signature="selectDropDownList()" name="selectDropDownList" duration-ms="89126" started-at="2019-03-19T09:49:08Z" finished-at="2019-03-19T09:50:37Z">
+        </test-method>
+        <test-method status="PASS" signature="takeScreenShotOnFailure(org.testng.ITestResult)" name="takeScreenShotOnFailure" is-config="true" duration-ms="2" started-at="2019-03-19T09:50:37Z" finished-at="2019-03-19T09:50:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult: selectDropDownList STATUS:SUCCESS METHOD:HomePage.InvisibleElementSelect.selectDropDownList()]
+]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>
