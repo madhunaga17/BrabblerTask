@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="DESKTOP-B4CGF5L" name="HomePage.InvisibleElementSelect" tests="1" failures="0" timestamp="19 Mar 2019 08:50:37 GMT" time="128.638" errors="0">
-  <testcase name="selectDropDownList" time="89.126" classname="HomePage.InvisibleElementSelect"/>
+<testsuite hostname="DESKTOP-B4CGF5L" name="Device.ContactsList" tests="2" failures="0" timestamp="19 Mar 2019 16:10:43 GMT" time="93.259" errors="0">
+  <testcase name="sortByFirstName" time="34.713" classname="Device.ContactsList"/>
+  <testcase name="sortByLastName" time="39.527" classname="Device.ContactsList"/>
 </testsuite>

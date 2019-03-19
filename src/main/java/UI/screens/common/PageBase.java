@@ -1,11 +1,8 @@
 package UI.screens.common;
 
-import static com.jayway.restassured.RestAssured.given;
-
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.tools.ant.taskdefs.WaitFor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -15,32 +12,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Duration;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import actionEngines.DriverBase;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.AndroidKeyCode;
-import io.appium.java_client.android.nativekey.PressesKey;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.offset.PointOption;
-import io.appium.java_client.android.AndroidDriver;
-
-import java.util.ArrayList;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 /**
  * @author Madhu Anjanappa
  */
@@ -137,6 +122,7 @@ public class PageBase extends DriverBase{
 	 */
 	public boolean isElementPresent(MobileElement element) throws Exception {
 		try {
+			System.out.println("Element displayed");
 			return element.isDisplayed();
 		} catch (NoSuchElementException e) {
 			return false;
@@ -144,6 +130,19 @@ public class PageBase extends DriverBase{
 		}
 
 	}
+	
+	/*
+	public Boolean scrollToCellByTitle(String title) {
+        System.out.println("  scrollToCellByTitle(): " + title);
+        List<AndroidElement> elementList = driver.findElements(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().resourceIdMatches(\".*id/list\")).setMaxSearchSwipes(5).scrollIntoView("
+                        + "new UiSelector().text(\"" + title + "\"))"));
+        if (elementList.isEmpty())
+            return false;
+        else {
+          return true;
+        }
+    }*/
 	
 	public void enableLocationServices() {
 		
@@ -216,6 +215,19 @@ public class PageBase extends DriverBase{
 
 	}
 
+	  public static boolean verifyElementIsPresent(WebElement element)
+		{
+			
+			try{
+				wait.until(ExpectedConditions.visibilityOf(element));
+				System.out.println("Element is present");
+				return true;
+			}
+			catch(Exception e){
+				return false;
+				
+			}
+		}
 	/**
 	 * Method to select specified Index from a dropdown(element)
 	 * 
@@ -371,4 +383,14 @@ public class PageBase extends DriverBase{
 		long secs=sec*1000;
         Thread.sleep(secs);
 	}
+	
+	/** Method to start contacts activity
+	 * @param package
+	 * @param activity
+	 */
+	
+	public void newActivity(String packageName, String ActivityName){
+		driver.startActivity(new Activity(packageName, ActivityName));
+	}
+	
 }

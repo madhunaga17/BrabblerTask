@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="128638" started-at="2019-03-19T09:48:28Z" finished-at="2019-03-19T09:50:37Z">
+  <suite name="Default suite" duration-ms="93259" started-at="2019-03-19T17:09:10Z" finished-at="2019-03-19T17:10:43Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="128638" started-at="2019-03-19T09:48:28Z" finished-at="2019-03-19T09:50:37Z">
-      <class name="HomePage.InvisibleElementSelect">
-        <test-method status="PASS" signature="launchTheApp()" name="launchTheApp" is-config="true" duration-ms="39485" started-at="2019-03-19T09:48:28Z" finished-at="2019-03-19T09:49:08Z">
+    <test name="Default test" duration-ms="93259" started-at="2019-03-19T17:09:10Z" finished-at="2019-03-19T17:10:43Z">
+      <class name="Device.ContactsList">
+        <test-method status="PASS" signature="launchTheApp()" name="launchTheApp" is-config="true" duration-ms="18987" started-at="2019-03-19T17:09:10Z" finished-at="2019-03-19T17:09:29Z">
         </test-method>
-        <test-method status="PASS" signature="selectDropDownList()" name="selectDropDownList" duration-ms="89126" started-at="2019-03-19T09:49:08Z" finished-at="2019-03-19T09:50:37Z">
+        <test-method status="PASS" signature="sortByFirstName()" name="sortByFirstName" duration-ms="34713" started-at="2019-03-19T17:09:29Z" finished-at="2019-03-19T17:10:03Z">
         </test-method>
-        <test-method status="PASS" signature="takeScreenShotOnFailure(org.testng.ITestResult)" name="takeScreenShotOnFailure" is-config="true" duration-ms="2" started-at="2019-03-19T09:50:37Z" finished-at="2019-03-19T09:50:37Z">
+        <test-method status="PASS" signature="takeScreenShotOnFailure(org.testng.ITestResult)" name="takeScreenShotOnFailure" is-config="true" duration-ms="2" started-at="2019-03-19T17:10:03Z" finished-at="2019-03-19T17:10:03Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult: selectDropDownList STATUS:SUCCESS METHOD:HomePage.InvisibleElementSelect.selectDropDownList()]
+                <![CDATA[[TestResult: sortByFirstName STATUS:SUCCESS METHOD:Device.ContactsList.sortByFirstName()]
+]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="sortByLastName()" name="sortByLastName" duration-ms="39527" started-at="2019-03-19T17:10:03Z" finished-at="2019-03-19T17:10:43Z">
+        </test-method>
+        <test-method status="PASS" signature="takeScreenShotOnFailure(org.testng.ITestResult)" name="takeScreenShotOnFailure" is-config="true" duration-ms="0" started-at="2019-03-19T17:10:43Z" finished-at="2019-03-19T17:10:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult: sortByLastName STATUS:SUCCESS METHOD:Device.ContactsList.sortByLastName()]
 ]]>
               </value>
             </param>

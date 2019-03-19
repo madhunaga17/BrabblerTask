@@ -17,13 +17,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 
 import UI.screens.common.PageContainer;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.StartsActivity;
 import utilities.Logger;
 
 
@@ -33,11 +36,12 @@ import utilities.Logger;
  */
 public class DriverBase {
 
-	protected static AppiumDriver driver;
+	public static AppiumDriver driver;
 	protected String env,device;
 	public PageContainer container;
 	public static TouchAction tapOn;
 	public static Actions action;
+	public static WebDriverWait wait;
 	
 	/**
 	 * Method to maximize the screen
@@ -133,6 +137,12 @@ public class DriverBase {
 			capabilities.setCapability("app", "E:\\AppiumProject\\maven\\src\\test\\resources\\FlixBus.apk");
 			capabilities.setCapability("appPackage", "de.flixbus.app");
 			capabilities.setCapability("appActivity", "de.meinfernbus.Main");
+		}else  if (device == "contactPageActivity") {
+        	capabilities.setCapability("VERSION", "5.0.1");
+			capabilities.setCapability("device", "Android");
+			capabilities.setCapability("deviceName", "dc14aaa1");
+			capabilities.setCapability("appPackage", "com.android.contacts");
+			capabilities.setCapability("appActivity", "com.android.contacts.activities.PeopleActivity");
 		}
         return capabilities;
     }
@@ -151,6 +161,7 @@ public class DriverBase {
 			try {
 				Logger.log("Launching app.....with desired capability...");
 				driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), installedAppCaps(device));
+				//readExcel = new ExcelDP(System.getProperty("user.dir")+ GetConfig.getProperty("testData"));
 				 
 			}catch(WebDriverException e) {
 				throw new Exception ("Appium server not started");
@@ -160,7 +171,7 @@ public class DriverBase {
 			tapOn= new TouchAction(driver);
 			action = new Actions(driver);
 			container = new PageContainer((AndroidDriver) driver);
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			Logger.log("Driver launched successfully!");
 			
 		}else if(env=="ios") 
