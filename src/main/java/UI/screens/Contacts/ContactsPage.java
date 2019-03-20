@@ -52,35 +52,37 @@ public class ContactsPage extends PageBase{
 	 */
 	
 
+	@SuppressWarnings("deprecation")
 	public void sortByFN() throws Exception{
-        driver.pressKeyCode(AndroidKeyCode.MENU);
+		clickMenu();
         contacts_settings_menu.click();
         contacts_contacts_menu.click();
         contacts_sortBy_menu.click();
         contacts_firstName_optionButton.click();
-        driver.pressKeyCode(AndroidKeyCode.BACK);
-        driver.pressKeyCode(AndroidKeyCode.BACK);
+        clickBackButton();
+        clickBackButton();
         Thread.sleep(2000);
     	driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"G\"));");
         Thread.sleep(2000);
-        isElementPresent(contacts_f_frame);
-        isElementPresent(contacts_firstLast_name);
+        System.out.println(isElementPresent(contacts_f_frame)+ ": Element is displayed");
+        System.out.println(isElementPresent(contacts_firstLast_name)+ ": Element is displayed");
 
 	}
 	
+	@SuppressWarnings("deprecation")
 	public void sortByLN() throws Exception{
-        driver.pressKeyCode(AndroidKeyCode.MENU);
+		clickMenu();
         contacts_settings_menu.click();
         contacts_contacts_menu.click();
         contacts_sortBy_menu.click();
         contacts_lastName_optionButton.click();
-        driver.pressKeyCode(AndroidKeyCode.BACK);
-        driver.pressKeyCode(AndroidKeyCode.BACK);
+        clickBackButton();
+        clickBackButton();
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"M\"));");
         Thread.sleep(2000);
-        isElementPresent(contacts_l_frame);
-        isElementPresent(contacts_firstLast_name);
+        System.out.println(isElementPresent(contacts_l_frame)+" : Element is displayed");
+        System.out.println(isElementPresent(contacts_firstLast_name)+" : Element is displayed");
 
 	}	
 }

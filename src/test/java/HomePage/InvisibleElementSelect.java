@@ -1,7 +1,9 @@
 package HomePage;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import UI.screens.HomePage.HomePage;
 import actionEngines.DriverBase;
 
@@ -21,9 +23,8 @@ public class InvisibleElementSelect extends DriverBase{
 		hp.selectDeparture();
     }
 	
-	
-	/*@AfterClass
+	@AfterClass
 	public void closeTheApp() {
 		closeApp();
-	}*/
+	}
 }

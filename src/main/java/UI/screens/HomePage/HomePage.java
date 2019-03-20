@@ -22,7 +22,7 @@ public class HomePage extends PageBase{
 	 */
 	
 
-	@AndroidFindBy(id= "de.flixbus.app:id/actv_from")
+	@AndroidFindBy(xpath= "//*[@resource-id='de.flixbus.app:id/vsp_from' or @resource-id='de.flixbus.app:id/actv_from']")
 	private MobileElement homePage_departure_dropDown_list;
 	
 	@AndroidFindBy(id= "de.flixbus.app:id/asp_search_input")

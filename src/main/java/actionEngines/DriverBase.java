@@ -27,6 +27,8 @@ import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.StartsActivity;
+import utilities.ApkPath;
+import utilities.GetConfig;
 import utilities.Logger;
 
 
@@ -35,7 +37,8 @@ import utilities.Logger;
  *
  */
 public class DriverBase {
-
+	
+	public static ApkPath appPath;
 	public static AppiumDriver driver;
 	protected String env,device;
 	public PageContainer container;
@@ -134,7 +137,7 @@ public class DriverBase {
 			capabilities.setCapability("device", "Android");
 			capabilities.setCapability("deviceName", "dc14aaa1");
 			capabilities.setCapability("platformName", "Android");
-			capabilities.setCapability("app", "E:\\AppiumProject\\maven\\src\\test\\resources\\FlixBus.apk");
+			//capabilities.setCapability("app", "E:\\AppiumProject\\maven\\src\\test\\resources\\FlixBus.apk");
 			capabilities.setCapability("appPackage", "de.flixbus.app");
 			capabilities.setCapability("appActivity", "de.meinfernbus.Main");
 		}else  if (device == "contactPageActivity") {
@@ -161,7 +164,7 @@ public class DriverBase {
 			try {
 				Logger.log("Launching app.....with desired capability...");
 				driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), installedAppCaps(device));
-				//readExcel = new ExcelDP(System.getProperty("user.dir")+ GetConfig.getProperty("testData"));
+				appPath = new ApkPath(System.getProperty("user.dir")+ GetConfig.getProperty("apkPath"));
 				 
 			}catch(WebDriverException e) {
 				throw new Exception ("Appium server not started");

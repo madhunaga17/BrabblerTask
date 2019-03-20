@@ -102,7 +102,9 @@ public class PageBase extends DriverBase{
 		driver.pressKeyCode(AndroidKeyCode.BACK);
 	}
 
-	
+	public void clickMenu() {
+		driver.pressKeyCode(AndroidKeyCode.MENU);
+	}
 	/**
 	 * Method to hide the keyboard in the app 
 	 */
@@ -122,7 +124,6 @@ public class PageBase extends DriverBase{
 	 */
 	public boolean isElementPresent(MobileElement element) throws Exception {
 		try {
-			System.out.println("Element displayed");
 			return element.isDisplayed();
 		} catch (NoSuchElementException e) {
 			return false;

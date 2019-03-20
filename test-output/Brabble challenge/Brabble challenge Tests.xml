@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="DESKTOP-B4CGF5L" name="Device.ContactsList" tests="3" failures="0" timestamp="20 Mar 2019 10:10:39 GMT" time="354.122" errors="0">
+  <testcase name="selectDropDownList" time="141.806" classname="HomePage.InvisibleElementSelect"/>
+  <testcase name="sortByFirstName" time="36.615" classname="Device.ContactsList"/>
+  <testcase name="sortByLastName" time="33.656" classname="Device.ContactsList"/>
+</testsuite>

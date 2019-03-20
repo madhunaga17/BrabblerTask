@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [RealTrack_UI_Tests]">
+  <test name="MetroBikes App Tests(failed)" preserve-order="false">
+    <classes>
+      <class name="HomePage.InvisibleElementSelect">
+        <methods>
+          <include name="launchTheApp"/>
+          <include name="takeScreenShotOnFailure"/>
+        </methods>
+      </class>
+      <class name="Device.ContactsList">
+        <methods>
+          <include name="launchTheApp"/>
+          <include name="sortByLastName"/>
+          <include name="sortByFirstName"/>
+          <include name="takeScreenShotOnFailure"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>
